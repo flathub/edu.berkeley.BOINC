@@ -2,17 +2,11 @@
 <component type="desktop-application">
     <id>edu.berkeley.BOINC</id>
     <metadata_license>CC0-1.0</metadata_license>
-    <project_license>LGPL-3.0-or-later</project_license>
-    <developer_name>University of California</developer_name>
+    <project_license>LGPL-3.0+ OR MPL-2.0</project_license>
     <content_rating type="oars-1.1"/>
-    <categories>
-        <category>Science</category>
-        <category>ComputerScience</category>
-        <category>ParallelComputing</category>
-    </categories>
-
     <name>BOINC Manager</name>
     <summary>Contribute computing power to projects doing research in many scientific areas</summary>
+
     <description>
         <p>BOINC lets you help cutting-edge science research using your computer. The
             BOINC app, running on your computer, downloads scientific computing jobs and
@@ -23,6 +17,7 @@
 
         <p>The BOINC and Science United projects are located at the University of
             California, Berkeley and are supported by the National Science Foundation.</p>
+
     </description>
 
     <launchable type="desktop-id">edu.berkeley.BOINC.desktop</launchable>
@@ -44,9 +39,6 @@
 
     <url type="homepage">https://boinc.berkeley.edu/index.php</url>
     <url type="bugtracker">https://github.com/BOINC/boinc/issues</url>
-    <url type="faq">https://boinc.berkeley.edu/wiki/BOINC_Help</url>
-    <url type="help">https://boinc.berkeley.edu/wiki/Main_Page</url>
-    <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
         <release version="7.18.1" date="2021-08-04">
