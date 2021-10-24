@@ -1,6 +1,6 @@
 app-id: edu.berkeley.BOINC
 runtime: org.gnome.Platform
-runtime-version: '41'
+runtime-version: "41"
 sdk: org.gnome.Sdk
 command: boincmgr
 finish-args:
@@ -30,7 +30,8 @@ modules:
       - /share
       - /lib/wx/include
 
-  ##### freeglut and libXmu needed for projects that display graphics https://boinc.berkeley.edu/trac/wiki/GraphicsApi#api
+  ##### freeglut and libXmu needed for projects that display graphics
+  ##### https://boinc.berkeley.edu/trac/wiki/GraphicsApi#api
   - name: freeglut
     buildsystem: cmake-ninja
     build-options:
@@ -41,8 +42,8 @@ modules:
         sha256: d4000e02102acaf259998c870e25214739d1f16f67f99cb35e4f46841399da68
     cleanup:
       - /include
-  
-  - name: libXmu 
+
+  - name: libXmu
     sources:
       - type: archive
         url: https://www.x.org/archive/individual/lib/libXmu-1.1.2.tar.bz2
@@ -53,15 +54,16 @@ modules:
   #####
 
   - name: boinc
-    buildsystem: simple
-    build-commands:
-      - ./_autosetup
-      ### prefix=/ because without it BOINC is set in /app/usr/lib
-      - ./configure --enable-shared --disable-server --prefix=/
-      - make
-      - make install DESTDIR=${FLATPAK_DEST}
-      ### Overwrite BOINCDIR or else it will warn that it can't find gui_rpc_auth.cfg
-      - sed -i 's:#BOINCDIR=/var/lib/boinc:BOINCDIR=/:' ${FLATPAK_DEST}/etc/boinc-client.conf
+    buildsystem: autotools
+    config-opts:
+      - --enable-shared
+      - --disable-server
+      - --disable-fcgi
+      - --enable-unicode
+    make-install-args:
+      - DESTDIR=${FLATPAK_DEST}
+      - prefix=
+      - exec_prefix=
     sources:
       - type: git
         url: https://github.com/BOINC/boinc.git
@@ -69,10 +71,19 @@ modules:
         commit: b49adfb118211e11c719766c0d71e7bdfe7f3363
       - type: file
         path: edu.berkeley.BOINC.metainfo.xml
-      ### Patch to change 2 prefs - workaround the broken simple GUI and exit the boinc client when boincmgr closes     
+      - type: shell
+        commands:
+          - ./_autosetup
+      ### Patch to change 2 prefs - workaround the broken simple GUI and exit the boinc client when boincmgr closes
       - type: patch
         path: change-application-defaults.patch
+      ### Patch to remove the -mavx flag so aarch64 can get through autoconf
+      - type: patch
+        path: configure-patch.patch
+        only-arches: aarch64
     post-install:
+      ### Overwrite BOINCDIR or else it will warn that it can't find gui_rpc_auth.cfg
+      - sed -i 's:#BOINCDIR=/var/lib/boinc:BOINCDIR=/:' ${FLATPAK_DEST}/etc/boinc-client.conf
       - install -Dm644 clientgui/res/boinc.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
       - install -Dm644 clientgui/res/boinc.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 edu.berkeley.BOINC.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
