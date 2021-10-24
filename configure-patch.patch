@@ -2,10 +2,8 @@ Description:
 aarch64 build fails with the error:
     checking for gcc options needed to detect all undeclared functions... cannot detect
     configure: error: cannot make gcc report undeclared builtins
-
 config.log shows:
     gcc: error: unrecognized command-line option '-mavx'
-
 
 diff a/configure.ac b/configure.ac
 --- a/configure.ac
@@ -24,4 +22,3 @@ diff a/configure.ac b/configure.ac
  AC_CHECK_HEADERS([immintrin.h avxintrin.h])
  
  AC_CHECK_DECLS([_xgetbv, xgetbv, __xgetbv, cpuid, _cpuid, __cpuid],
-
