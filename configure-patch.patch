@@ -1,9 +1,14 @@
+Description:
+aarch64 build fails with the error:
+    checking for gcc options needed to detect all undeclared functions... cannot detect
+    configure: error: cannot make gcc report undeclared builtins
+config.log shows:
+    gcc: error: unrecognized command-line option '-mavx'
+
+diff a/configure.ac b/configure.ac
 --- a/configure.ac
 +++ b/configure.ac
-@@ -709,8 +709,8 @@
- save_cxxflags="${CXXFLAGS}"
- save_cppflags="${CPPFLAGS}"
- CXXFLAGS="${CXXFLAGS} -msse3"
+@@ -693,6 +693,6 @@ CXXFLAGS="${CXXFLAGS} -msse3"
  CPPFLAGS="${CPPFLAGS} -msse3"
  AC_CHECK_HEADERS([intrin.h x86intrin.h pmmintrin.h xmmintrin.h emmintrin.h])
 -CXXFLAGS="${save_cxxflags} -mavx"
