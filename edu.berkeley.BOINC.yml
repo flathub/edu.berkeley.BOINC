@@ -71,16 +71,15 @@ modules:
         commit: b49adfb118211e11c719766c0d71e7bdfe7f3363
       - type: file
         path: edu.berkeley.BOINC.metainfo.xml
-      - type: shell
-        commands:
-          - ./_autosetup
       ### Patch to change 2 prefs - workaround the broken simple GUI and exit the boinc client when boincmgr closes
       - type: patch
         path: change-application-defaults.patch
       ### Patch to remove the -mavx flag so aarch64 can get through autoconf
       - type: patch
         path: configure-patch.patch
-        only-arches: aarch64
+      - type: shell
+        commands:
+          - ./_autosetup
     post-install:
       ### Overwrite BOINCDIR or else it will warn that it can't find gui_rpc_auth.cfg
       - sed -i 's:#BOINCDIR=/var/lib/boinc:BOINCDIR=/:' ${FLATPAK_DEST}/etc/boinc-client.conf
