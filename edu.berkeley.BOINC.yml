@@ -16,14 +16,12 @@ modules:
   - shared-modules/glu/glu-9.json
 
   - name: wxWidgets
-    buildsystem: autotools
-    config-opts:
-      - --with-gtk
-      - --disable-tests
+    buildsystem: cmake-ninja
     sources:
-      - type: archive
-        url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.5/wxWidgets-3.1.5.tar.bz2
-        sha1: 725455d6324baa808259b56a42199237327e0638
+      - type: git
+        url: https://github.com/wxWidgets/wxWidgets.git
+        tag: v3.2.0
+        commit: 5b5ec3804a31a3765d60ff351bbdf79eddb1e1f9
     cleanup:
       - /bin
       - /include
