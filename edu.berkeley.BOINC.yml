@@ -1,6 +1,6 @@
 app-id: edu.berkeley.BOINC
 runtime: org.gnome.Platform
-runtime-version: "41"
+runtime-version: '42'
 sdk: org.gnome.Sdk
 command: boincmgr
 finish-args:
@@ -16,14 +16,12 @@ modules:
   - shared-modules/glu/glu-9.json
 
   - name: wxWidgets
-    buildsystem: autotools
-    config-opts:
-      - --with-gtk
-      - --disable-tests
+    buildsystem: cmake-ninja
     sources:
-      - type: archive
-        url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.5/wxWidgets-3.1.5.tar.bz2
-        sha1: 725455d6324baa808259b56a42199237327e0638
+      - type: git
+        url: https://github.com/wxWidgets/wxWidgets.git
+        tag: v3.2.0
+        commit: 5b5ec3804a31a3765d60ff351bbdf79eddb1e1f9
     cleanup:
       - /bin
       - /include
@@ -46,8 +44,8 @@ modules:
   - name: libXmu
     sources:
       - type: archive
-        url: https://www.x.org/archive/individual/lib/libXmu-1.1.2.tar.bz2
-        sha256: 756edc7c383254eef8b4e1b733c3bf1dc061b523c9f9833ac7058378b8349d0b
+        url: https://www.x.org/releases/individual/lib/libXmu-1.1.3.tar.gz
+        sha256: 5bd9d4ed1ceaac9ea023d86bf1c1632cd3b172dce4a193a72a94e1d9df87a62e
     cleanup:
       - /include
       - /share
@@ -67,16 +65,14 @@ modules:
     sources:
       - type: git
         url: https://github.com/BOINC/boinc.git
-        tag: client_release/7.18/7.18.1
-        commit: b49adfb118211e11c719766c0d71e7bdfe7f3363
+        tag: client_release/7.20/7.20.1
+        commit: b6a9ea25c786735c2f713e3827761d11d6db34c9
       - type: file
         path: edu.berkeley.BOINC.metainfo.xml
       ### Patch to change 2 prefs - workaround the broken simple GUI and exit the boinc client when boincmgr closes
       - type: patch
         path: change-application-defaults.patch
       ### Patch to remove the -mavx flag so aarch64 can get through autoconf
-      - type: patch
-        path: configure-patch.patch
       - type: shell
         commands:
           - ./_autosetup
