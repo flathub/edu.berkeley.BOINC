@@ -73,8 +73,6 @@ modules:
       - type: patch
         path: change-application-defaults.patch
       ### Patch to remove the -mavx flag so aarch64 can get through autoconf
-      - type: patch
-        path: configure-patch.patch
       - type: shell
         commands:
           - ./_autosetup
