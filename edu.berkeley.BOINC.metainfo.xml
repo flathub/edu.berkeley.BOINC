@@ -49,6 +49,28 @@
     <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
+        <release version="7.20.2" date="2022-07-21">
+            <description>
+                <p>The update to 7.20.2 includes these changes from 7.20:</p>
+                <ul>
+                    <li>Manager: show appropriate Welcome Page on first run.</li>
+                    <li>Manager: add ctrl-A shortcut to go to advanced view</li>
+                    <li>Manager: fix alt-space crash</li>
+                    <li>Manager: fix RTL languages in disk view</li>
+                    <li>Manager: add "Suspend when no mouse/keyboard input in last XX minutes" to prefs dialog</li>
+                    <li>Manager: correctly handle large numbers in prefs</li>
+                    <li>Client: allow empty GUI RPC password but show warning</li>
+                    <li>Client: display IPV6 addresses correctly</li>
+                    <li>Client: don't tell Manager that graphics app exists if it's still downloading</li>
+                    <li>Client: fix overly aggressive project-wide file transfer backoff policy</li>
+                    <li>Client: fix work-fetch logic when max concurrent limits are used</li>
+                    <li>Other changes are listed in the 'Releases' page on BOINC's GitHub repository</li>
+                </ul>
+            </description>
+            <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F7.20%2F7.20.2</url>
+        </release>
+        
+        
         <release version="7.18.1" date="2021-08-04">
             <description>
                 <ul>

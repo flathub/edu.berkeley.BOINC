@@ -65,14 +65,13 @@ modules:
     sources:
       - type: git
         url: https://github.com/BOINC/boinc.git
-        tag: client_release/7.20/7.20.1
-        commit: b6a9ea25c786735c2f713e3827761d11d6db34c9
+        tag: client_release/7.20/7.20.2
+        commit: 82d0a3731c743884b6e7a25d68c6558eca691635
       - type: file
         path: edu.berkeley.BOINC.metainfo.xml
       ### Patch to change 2 prefs - workaround the broken simple GUI and exit the boinc client when boincmgr closes
       - type: patch
         path: change-application-defaults.patch
-      ### Patch to remove the -mavx flag so aarch64 can get through autoconf
       - type: shell
         commands:
           - ./_autosetup
