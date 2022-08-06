@@ -1,0 +1,18 @@
+Description:
+Hard-code the path to the skins directory
+
+diff a/clientgui/SkinManager.cpp b/clientgui/SkinManager.cpp
+--- a/clientgui/SkinManager.cpp
++++ b/clientgui/SkinManager.cpp
+@@ -979,8 +979,11 @@ #elif defined(__WXGTK__)
+     strSkinLocation = wxGetApp().GetRootDirectory();
+     if (strSkinLocation.StartsWith("/usr/")) {
+         strSkinLocation += wxT("/../share/boinc-manager/skins");
+     }
++    else if (strSkinLocation.StartsWith("/app/")) {
++        strSkinLocation += wxT("/../share/boinc-manager/skins");
++    }
+     else {
+         strSkinLocation += wxT("/skins");
+     }
+
