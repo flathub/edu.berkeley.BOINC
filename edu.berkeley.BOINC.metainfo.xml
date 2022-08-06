@@ -49,6 +49,13 @@
     <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
+        <release version="7.20.2-1" date="2022-08-06">
+            <description>
+                <ul>
+                    <li>Skins are now included for 'Simple View'</li>
+                </ul>
+            </description>
+        </release>
         <release version="7.20.2" date="2022-07-21">
             <description>
                 <p>The update to 7.20.2 includes these changes from 7.20:</p>

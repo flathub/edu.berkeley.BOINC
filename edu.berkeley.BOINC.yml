@@ -72,6 +72,9 @@ modules:
       ### Patch to change 2 prefs - workaround the broken simple GUI and exit the boinc client when boincmgr closes
       - type: patch
         path: change-application-defaults.patch
+      ### Patch to check for skins under /app
+      - type: patch
+        path: skin-location.patch
       - type: shell
         commands:
           - ./_autosetup
