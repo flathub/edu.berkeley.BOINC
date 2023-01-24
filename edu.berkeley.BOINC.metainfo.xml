@@ -49,6 +49,28 @@
     <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
+        <release version="7.22.0" date="2022-01-23">
+            <description>
+                <p>BOINC Manager 7.22.0 includes these changes:
+                <ul>
+                    <li>Added limits to validating doubles in preferences</li>
+                    <li>Add estimated time remaining for file transfers</li>
+                    <li>Fix non-BOINC CPU usage limit on Win and Linux</li>
+                    <li>Add estimated completion date and completion before deadline columns to Tasks tab</li>
+                    <li>Added Estimated Completion column to Advanced view > Tasks</li>
+                    <li>Close file descriptors if Curl initialization fails via</li>
+                    <li>Reset progress percentage to last checkpoint when task is initialized</li>
+                    <li>Add not-in-use computing prefs</li>
+                    <li>Update cpu/gpu resources when app_config is re-read</li>
+                    <li>Convert ProcessorTab in Preferences dialog from wxPanel to wxScrolledWindow to show all content on small screens (e.g. 1024x768)</li>
+                    <li>Disable Remove button when no more exclusive applications exist</li>
+                    <li>Add warning message in preferences for suspension</li>
+                    <li>Fix: make button labels appear in terms of use dialog</li>
+                    <li>Canonicalize URLs to lower case</li>
+                </ul>
+            </description>
+            <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F7.22%2F7.22.0</url>
+        </release>
         <release version="7.20.2-1" date="2022-08-06">
             <description>
                 <ul>
