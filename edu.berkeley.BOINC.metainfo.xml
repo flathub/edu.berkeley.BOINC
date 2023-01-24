@@ -51,7 +51,7 @@
     <releases>
         <release version="7.22.0" date="2022-01-23">
             <description>
-                <p>BOINC Manager 7.22.0 includes these changes:
+                <p>BOINC Manager 7.22.0 includes these changes:</p>
                 <ul>
                     <li>Added limits to validating doubles in preferences</li>
                     <li>Add estimated time remaining for file transfers</li>
