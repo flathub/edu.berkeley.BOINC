@@ -49,7 +49,7 @@
     <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
-        <release version="7.22.0" date="2022-01-23">
+        <release version="7.22.0" date="2023-01-23">
             <description>
                 <p>BOINC Manager 7.22.0 includes these changes:</p>
                 <ul>
