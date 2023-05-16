@@ -4,7 +4,7 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>LGPL-3.0-or-later</project_license>
     <developer_name>University of California</developer_name>
-    <content_rating type="oars-1.1"/>
+    <content_rating type="oars-1.1" />
     <categories>
         <category>Science</category>
         <category>ComputerScience</category>
@@ -49,20 +49,36 @@
     <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
-        <release version="7.22.0" date="2022-01-23">
+        <release version="7.22.1" date="2023-05-08">
+            <description>
+                <p>BOINC Manager 7.22.1 includes these changes:</p>
+                <ul>
+                    <li>Don't clear in-use prefs when disable in-use computing</li>
+                    <li>Enhance computing prefs dialog</li>
+                    <li>Sort requests to suspend/resume/abort multiple tasks</li>
+                    <li>Avoid crash if account manager list is empty</li>
+                    <li>Fix bug where "estimated completion" and "completion before deadline" task
+                        fields switch back and forth to --- during CPU throttling</li>
+                </ul>
+            </description>
+            <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F7.22%2F7.22.1</url>
+        </release>
+        <release version="7.22.0" date="2023-01-23">
             <description>
                 <p>BOINC Manager 7.22.0 includes these changes:</p>
                 <ul>
                     <li>Added limits to validating doubles in preferences</li>
                     <li>Add estimated time remaining for file transfers</li>
                     <li>Fix non-BOINC CPU usage limit on Win and Linux</li>
-                    <li>Add estimated completion date and completion before deadline columns to Tasks tab</li>
+                    <li>Add estimated completion date and completion before deadline columns to
+                        Tasks tab</li>
                     <li>Added Estimated Completion column to Advanced view > Tasks</li>
                     <li>Close file descriptors if Curl initialization fails via</li>
                     <li>Reset progress percentage to last checkpoint when task is initialized</li>
                     <li>Add not-in-use computing prefs</li>
                     <li>Update cpu/gpu resources when app_config is re-read</li>
-                    <li>Convert ProcessorTab in Preferences dialog from wxPanel to wxScrolledWindow to show all content on small screens (e.g. 1024x768)</li>
+                    <li>Convert ProcessorTab in Preferences dialog from wxPanel to wxScrolledWindow
+                        to show all content on small screens (e.g. 1024x768)</li>
                     <li>Disable Remove button when no more exclusive applications exist</li>
                     <li>Add warning message in preferences for suspension</li>
                     <li>Fix: make button labels appear in terms of use dialog</li>
@@ -86,11 +102,13 @@
                     <li>Manager: add ctrl-A shortcut to go to advanced view</li>
                     <li>Manager: fix alt-space crash</li>
                     <li>Manager: fix RTL languages in disk view</li>
-                    <li>Manager: add "Suspend when no mouse/keyboard input in last XX minutes" to prefs dialog</li>
+                    <li>Manager: add "Suspend when no mouse/keyboard input in last XX minutes" to
+                        prefs dialog</li>
                     <li>Manager: correctly handle large numbers in prefs</li>
                     <li>Client: allow empty GUI RPC password but show warning</li>
                     <li>Client: display IPV6 addresses correctly</li>
-                    <li>Client: don't tell Manager that graphics app exists if it's still downloading</li>
+                    <li>Client: don't tell Manager that graphics app exists if it's still
+                        downloading</li>
                     <li>Client: fix overly aggressive project-wide file transfer backoff policy</li>
                     <li>Client: fix work-fetch logic when max concurrent limits are used</li>
                     <li>Other changes are listed in the 'Releases' page on BOINC's GitHub repository</li>
@@ -98,8 +116,6 @@
             </description>
             <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F7.20%2F7.20.2</url>
         </release>
-        
-        
         <release version="7.18.1" date="2021-08-04">
             <description>
                 <ul>
@@ -109,4 +125,3 @@
         </release>
     </releases>
 </component>
-

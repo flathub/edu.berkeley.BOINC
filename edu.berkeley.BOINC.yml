@@ -1,6 +1,6 @@
 app-id: edu.berkeley.BOINC
 runtime: org.gnome.Platform
-runtime-version: '43'
+runtime-version: "44"
 sdk: org.gnome.Sdk
 command: boincmgr
 finish-args:
@@ -20,8 +20,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/wxWidgets/wxWidgets.git
-        tag: v3.2.1
-        commit: 97e99707c5d2271a70cb686720b48dbf34ced496
+        tag: v3.2.2.1
+        commit: a812fffda3fe686c94e24bff27e8effd96e4de64
     cleanup:
       - /bin
       - /include
@@ -62,16 +62,13 @@ modules:
     sources:
       - type: git
         url: https://github.com/BOINC/boinc.git
-        tag: client_release/7.22/7.22.0
-        commit: c3510f31b45e0540e1fc2b6c64c1aae0bce1c1a2
+        tag: client_release/7.22/7.22.1
+        commit: 45352deb19161b74eb26c8ecebf1255040f3c69a
       - type: file
         path: edu.berkeley.BOINC.metainfo.xml
       ### Patch to change 2 prefs - workaround the broken simple GUI and exit the boinc client when boincmgr closes
       - type: patch
         path: change-application-defaults.patch
-      ### Patch to check for skins under /app
-      - type: patch
-        path: skin-location.patch
       - type: shell
         commands:
           - ./_autosetup
