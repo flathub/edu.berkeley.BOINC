@@ -5,18 +5,19 @@ Launch the advanced GUI to avoid a broken simple GUI (https://github.com/BOINC/b
 diff a/clientgui/BOINCGUIApp.cpp b/clientgui/BOINCGUIApp.cpp
 --- a/clientgui/BOINCGUIApp.cpp
 +++ b/clientgui/BOINCGUIApp.cpp
-@@ -189,13 +189,13 @@ bool CBOINCGUIApp::OnInit()
+@@ -226,7 +226,7 @@ bool CBOINCGUIApp::OnInit() {
+
      // Restore Application State
      m_pConfig->SetPath(wxT("/"));
 -    m_pConfig->Read(wxT("AutomaticallyShutdownClient"), &m_iShutdownCoreClient, 0L);
 +    m_pConfig->Read(wxT("AutomaticallyShutdownClient"), &m_iShutdownCoreClient, 1L);
      m_pConfig->Read(wxT("DisplayShutdownClientDialog"), &m_iDisplayExitDialog, 1L);
      m_pConfig->Read(wxT("DisplayShutdownConnectedClientDialog"), &m_iDisplayShutdownConnectedClientDialog, 1L);
- #ifdef __WXMAC__
-     m_pConfig->Read(wxT("HideMenuBarIcon"), &m_iHideMenuBarIcon, 0L);
+     m_pConfig->Read(wxT("DisplayAnotherInstanceRunningDialog"), &m_iDisplayAnotherInstanceRunningDialog, 1L);
+@@ -254,7 +254,7 @@ bool CBOINCGUIApp::OnInit() {
+     }
  #endif
-     m_pConfig->Read(wxT("DisableAutoStart"), &m_iBOINCMGRDisableAutoStart, 0L);
-     m_pConfig->Read(wxT("LanguageISO"), &m_strISOLanguageCode, wxT(""));
+     m_pConfig->Read(wxT("UseDefaultLocale"), &m_bUseDefaultLocale, bUseDefaultLocaleDefault);
 -    m_pConfig->Read(wxT("GUISelection"), &m_iGUISelected, BOINC_SIMPLEGUI);
 +    m_pConfig->Read(wxT("GUISelection"), &m_iGUISelected, BOINC_ADVANCEDGUI);
      m_pConfig->Read(wxT("EventLogOpen"), &bOpenEventLog);
