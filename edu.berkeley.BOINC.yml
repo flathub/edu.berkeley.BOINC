@@ -20,8 +20,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/wxWidgets/wxWidgets.git
-        tag: v3.2.2.1
-        commit: a812fffda3fe686c94e24bff27e8effd96e4de64
+        tag: v3.2.5
+        commit: 573e56d432cc2c4b19a27aa5cad3e6045bfc542b
     cleanup:
       - /bin
       - /include
@@ -34,16 +34,16 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/FreeGLUTProject/freeglut/releases/download/v3.4.0/freeglut-3.4.0.tar.gz
-        sha256: 3c0bcb915d9b180a97edaebd011b7a1de54583a838644dcd42bb0ea0c6f3eaec
+        url: https://github.com/FreeGLUTProject/freeglut/releases/download/v3.6.0/freeglut-3.6.0.tar.gz
+        sha256: 9c3d4d6516fbfa0280edc93c77698fb7303e443c1aaaf37d269e3288a6c3ea52
     cleanup:
       - /include
 
   - name: libXmu
     sources:
       - type: archive
-        url: https://www.x.org/releases/individual/lib/libXmu-1.1.4.tar.gz
-        sha256: 3091d711cdc1d8ea0f545a13b90d1464c3c3ab64778fd121f0d789b277a80289
+        url: https://www.x.org/releases/individual/lib/libXmu-1.2.1.tar.gz
+        sha256: bf0902583dd1123856c11e0a5085bd3c6e9886fbbd44954464975fd7d52eb599
     cleanup:
       - /include
       - /share
@@ -62,8 +62,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/BOINC/boinc.git
-        tag: client_release/7.22/7.22.1
-        commit: 45352deb19161b74eb26c8ecebf1255040f3c69a
+        tag: client_release/8.0/8.0.2
+        commit: c0b8b6fd37687aa1b93102129a054837b84cc032
       - type: file
         path: edu.berkeley.BOINC.metainfo.xml
       ### Patch to change 2 prefs - workaround the broken simple GUI and exit the boinc client when boincmgr closes

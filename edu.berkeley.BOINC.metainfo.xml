@@ -49,6 +49,35 @@
     <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
+        <release version="8.0.2" date="2024-05-30">
+            <description>
+                <p>BOINC Manager 8.0.2 includes these changes:</p>
+                <ul>
+                    <li>Support sporadic applications</li>
+                    <li>Show correct disk data when connect to new host</li>
+                    <li>Finish sleep before kill descendants</li>
+                    <li>Detect ss32 on Ryzen 7950x</li>
+                    <li>Fix blank windows in skinned simple view</li>
+                    <li>Correctly detect CPU words when cpuset cgroup is used</li>
+                    <li>improve implementation of CPU throttling</li>
+                    <li>the default value for the "suspend_if_no_recent_input" pref is 0, not 60</li>
+                    <li>if sched request fails, show the scheduler URL (that might be the problem)</li>
+                    <li>Show alert if idle time to resume computing is greater than idle time to suspend computing</li>
+                    <li>ignore old prefs sent by projects or AM</li>
+                    <li>avoid overscheduling CPUs in presence of MT jobs</li>
+                    <li>Manager: computing prefs dialog bug</li>
+                    <li>Manager: Add button in event log to display only alerts (errors)</li>
+                    <li>Manager: Improve consistency of control labels and accelerators</li>
+                    <li>Manager: Show native names for language options, and only those for which translations are available</li>
+                    <li>Add estimated time remaining for file transfers</li>
+                    <li>Add estimated completion date and completion before deadline columns to Tasks tab</li>
+                    <li>Add Estimated Completion column to Advanced view - Tasks</li>
+                    <li>Add not-in-use computing prefs</li>
+                    <li>Don't change user CPID if detach from oldest project</li>
+                </ul>
+            </description>
+            <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F8.0%2F8.0.2</url>
+        </release>
         <release version="7.22.1" date="2023-05-08">
             <description>
                 <p>BOINC Manager 7.22.1 includes these changes:</p>
