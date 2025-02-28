@@ -29,16 +29,20 @@
 
     <screenshots>
         <screenshot type="default">
-            <caption>A screenshot of the project tab in the BOINC Manager</caption>
-            <image>https://raw.githubusercontent.com/BOINC/boinc-site/master/mgrprojects.png</image>
+            <caption>A screenshot of the projects tab in the BOINC Manager</caption>
+            <image>https://raw.githubusercontent.com/wiki/BOINC/boinc/images/ubuntu_manager_projects.png</image>
         </screenshot>
         <screenshot>
             <caption>A screenshot of the tasks tab in the BOINC Manager</caption>
-            <image>https://raw.githubusercontent.com/BOINC/boinc-site/master/mgrwork.png</image>
+            <image>https://raw.githubusercontent.com/wiki/BOINC/boinc/images/ubuntu_manager_tasks.png</image>
         </screenshot>
         <screenshot>
             <caption>A screenshot of the statistics tab in the BOINC Manager</caption>
-            <image>https://raw.githubusercontent.com/BOINC/boinc-site/master/mgrstatistics.png</image>
+            <image>https://raw.githubusercontent.com/wiki/BOINC/boinc/images/ubuntu_manager_statistics.png</image>
+        </screenshot>
+        <screenshot>
+            <caption>A screenshot of the disk tab in the BOINC Manager</caption>
+            <image>https://raw.githubusercontent.com/wiki/BOINC/boinc/images/ubuntu_manager_disk.png</image>
         </screenshot>
     </screenshots>
 
