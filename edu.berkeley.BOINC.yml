@@ -1,6 +1,7 @@
 app-id: edu.berkeley.BOINC
 runtime: org.gnome.Platform
 runtime-version: "48"
+##### test comment
 sdk: org.gnome.Sdk
 command: boincmgr
 finish-args:
