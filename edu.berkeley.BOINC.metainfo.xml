@@ -53,6 +53,24 @@
     <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
+        <release version="8.2.4" date="2025-07-11">
+            <description>
+                <p>BOINC Manager 8.2.4 includes these changes:</p>
+                <ul>
+                    <li>Support containerized tasks with Docker. This requires installing Docker or Podman.</li>
+                    <li>Grey out projects in the 'Add Project' wizard that are already added</li>
+                    <li>Setting created to automatically cancel expired tasks</li>
+                    <li>Application name now displayed in Task properties</li>
+                    <li>GPU memory is now reported in GB</li>
+                    <li>Recompute resource usage after reread app_config.xml</li>
+                    <li>Make resource usages take effect after reread app_config.xml</li>
+                    <li>Account CPU time of Docker apps correctly</li>
+                    <li>Run CPU benchmarks on startup if new install or upgrade</li>
+                    <li>Add 'no_disk_usage' option: don't compute disk usage on each scheduler RPC</li>
+                </ul>
+            </description>
+            <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F8.2%2F8.2.4</url>
+        </release>
         <release version="8.0.2" date="2024-05-30">
             <description>
                 <p>BOINC Manager 8.0.2 includes these changes:</p>
