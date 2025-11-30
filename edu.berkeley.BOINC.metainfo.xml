@@ -53,6 +53,29 @@
     <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
+        <release version="8.2.8" date="2025-11-24">
+            <description>
+                <p>BOINC Manager 8.2.8 includes these changes:</p>
+                <ul>
+                    <li>Improve measurement of non-BOINC CPU usage</li>
+                    <li>Fix Docker image cleanup</li>
+                    <li>Fixed Simple GUI when using Dark Mode</li>
+                    <li>Event log displays 0 bytes for certain files</li>
+                    <li>Update NVIDIA FLOPS calculation for Blackwell</li>
+                    <li>Docker hello-world: delete the created container, keep image</li>
+                    <li>Don't run GPU job if all GPUs of that type are excluded</li>
+                    <li>Fix CPU throttling bugs</li>
+                    <li>Remove spurious error messages about WU FLOPS</li>
+                    <li>Preserve existing MRU cComputers when saving</li>
+                    <li>Avoid erroneous 'suspended - non-BOINC CPU' when running Docker apps</li>
+                    <li>Run benchmarks on startup if new install or upgrade</li>
+                    <li>Manager: change size of email and user name wxTextCtrl to default</li>
+                    <li>Link to platform-specific wiki pages about installing Docker</li>
+                    <li>Add no_disk_usage flag in cc_config.xml</li>
+                </ul>
+            </description>
+            <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F8.2%2F8.2.4</url>
+        </release>
         <release version="8.2.4" date="2025-07-11">
             <description>
                 <p>BOINC Manager 8.2.4 includes these changes:</p>
