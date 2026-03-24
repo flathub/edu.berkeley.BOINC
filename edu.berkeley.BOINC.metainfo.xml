@@ -48,11 +48,25 @@
 
     <url type="homepage">https://boinc.berkeley.edu/index.php</url>
     <url type="bugtracker">https://github.com/BOINC/boinc/issues</url>
-    <url type="faq">https://boinc.berkeley.edu/wiki/BOINC_Help</url>
-    <url type="help">https://boinc.berkeley.edu/wiki/Main_Page</url>
+    <url type="faq">https://github.com/BOINC/boinc/discussions</url>
+    <url type="help">https://github.com/BOINC/boinc/wiki/User-manual</url>
     <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
+        <release version="8.2.9" date="2026-03-24">
+            <description>
+                <p>BOINC Manager 8.2.9 includes these changes:</p>
+                <ul>
+                    <li>Fix problem with Podman container cleanup</li>
+                    <li>Allow projects to dynamically change resource usage of app versions</li>
+                    <li>If client has a Podman job but no Podman, don't try to run it</li>
+                    <li>Make Podman jobs pause (not quit) when quit the client</li>
+                    <li>Show resuming-computation message even if throttled</li>
+                    <li>Fix wrong suspend reason messages in Manager</li>
+                </ul>
+            </description>
+            <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F8.2%2F8.2.9</url>
+        </release>
         <release version="8.2.8" date="2025-11-24">
             <description>
                 <p>BOINC Manager 8.2.8 includes these changes:</p>
@@ -74,7 +88,7 @@
                     <li>Add no_disk_usage flag in cc_config.xml</li>
                 </ul>
             </description>
-            <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F8.2%2F8.2.4</url>
+            <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F8.2%2F8.2.8</url>
         </release>
         <release version="8.2.4" date="2025-07-11">
             <description>
