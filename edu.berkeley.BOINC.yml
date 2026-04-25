@@ -11,6 +11,7 @@ finish-args:
   - --device=dri
   - --persist=.BOINC
   - --persist=.
+  - --talk-name=org.freedesktop.Flatpak
 cleanup:
  - /include
  - /lib/cmake
@@ -50,6 +51,25 @@ modules:
         sha256: bf0902583dd1123856c11e0a5085bd3c6e9886fbbd44954464975fd7d52eb599
 
   #####
+
+  # Wrapper scripts so BOINC can detect and invoke host-installed podman/docker.
+  # BOINC calls bare "podman"/"docker" commands; inside the flatpak sandbox those
+  # binaries don't exist. These wrappers use flatpak-spawn --host to delegate
+  # execution to the host system (requires --talk-name=org.freedesktop.Flatpak).
+  - name: container-cli-wrappers
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 podman-wrapper.sh /app/bin/podman
+      - install -Dm755 docker-wrapper.sh /app/bin/docker
+    sources:
+      - type: script
+        dest-filename: podman-wrapper.sh
+        commands:
+          - exec flatpak-spawn --host podman "$@"
+      - type: script
+        dest-filename: docker-wrapper.sh
+        commands:
+          - exec flatpak-spawn --host docker "$@"
 
   - name: boinc
     buildsystem: autotools
