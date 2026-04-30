@@ -64,8 +64,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/BOINC/boinc.git
-        tag: client_release/8.2/8.2.11
-        commit: 5511380b8980935c25c3ea41df3980445419e59e
+        tag: client_release/8.2/8.2.12
+        commit: 9949cd3c12932b5f3f2997ce460fd959107c65a5
       - type: file
         path: edu.berkeley.BOINC.metainfo.xml
       ### Patch to change 2 prefs - workaround the broken simple GUI and exit the boinc client when boincmgr closes

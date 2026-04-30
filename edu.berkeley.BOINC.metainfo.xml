@@ -53,6 +53,15 @@
     <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
+        <release version="8.2.12" date="2026-04-30">
+            <description>
+                <p>BOINC Manager 8.2.12 includes these changes:</p>
+                <ul>
+                    <li>Support Wayland-based OSs</li>
+                </ul>
+            </description>
+            <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F8.2%2F8.2.12</url>
+        </release>
         <release version="8.2.11" date="2026-04-20">
             <description>
                 <p>BOINC Manager 8.2.11 includes these changes:</p>
