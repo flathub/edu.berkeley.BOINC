@@ -53,6 +53,18 @@
     <url type="translate">https://www.transifex.com/boinc/boinc/</url>
 
     <releases>
+        <release version="8.2.11" date="2026-04-20">
+            <description>
+                <p>BOINC Manager 8.2.11 includes these changes:</p>
+                <ul>
+                    <li>Fix credit accounting when using Science United</li>
+                    <li>Make app_config.xml settings apply to BUDA jobs</li>
+                    <li>Show GPU flops as TFLOPS/GFLOPS/MFLOPS depending on value</li>
+                    <li>Fix bug: no work fetch if reset project with max_concurrent</li>
+                </ul>
+            </description>
+            <url>https://github.com/BOINC/boinc/releases/tag/client_release%2F8.2%2F8.2.11</url>
+        </release>
         <release version="8.2.9" date="2026-03-24">
             <description>
                 <p>BOINC Manager 8.2.9 includes these changes:</p>

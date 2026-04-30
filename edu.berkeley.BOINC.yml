@@ -1,6 +1,6 @@
 app-id: edu.berkeley.BOINC
 runtime: org.gnome.Platform
-runtime-version: "48"
+runtime-version: "50"
 sdk: org.gnome.Sdk
 command: boincmgr
 finish-args:
@@ -11,22 +11,28 @@ finish-args:
   - --device=dri
   - --persist=.BOINC
   - --persist=.
+cleanup:
+ - /include
+ - /lib/cmake
+ - /lib/pkgconfig
+ - /share/doc
+ - /share/man
+ - '*.la'
+ - '*.a'
 
 modules:
   - shared-modules/glu/glu-9.json
 
   - name: wxWidgets
     buildsystem: cmake-ninja
+    cleanup:
+      - /bin
+      - /lib/wx/include
     sources:
       - type: git
         url: https://github.com/wxWidgets/wxWidgets.git
         tag: v3.3.1
         commit: 49c6810948f40c457e3d0848b9111627b5b61de5
-    cleanup:
-      - /bin
-      - /include
-      - /share
-      - /lib/wx/include
 
   ##### freeglut and libXmu needed for projects that display graphics
   ##### https://boinc.berkeley.edu/trac/wiki/GraphicsApi#api
@@ -36,17 +42,13 @@ modules:
       - type: archive
         url: https://github.com/freeglut/freeglut/releases/download/v3.8.0/freeglut-3.8.0.tar.gz
         sha256: 674dcaff25010e09e450aec458b8870d9e98c46f99538db457ab659b321d9989
-    cleanup:
-      - /include
 
   - name: libXmu
     sources:
       - type: archive
         url: https://www.x.org/releases/individual/lib/libXmu-1.2.1.tar.gz
         sha256: bf0902583dd1123856c11e0a5085bd3c6e9886fbbd44954464975fd7d52eb599
-    cleanup:
-      - /include
-      - /share
+
   #####
 
   - name: boinc
@@ -62,8 +64,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/BOINC/boinc.git
-        tag: client_release/8.2/8.2.9
-        commit: d56d870a5e7dad6c9f1a8c3b1075f11844b87ca2
+        tag: client_release/8.2/8.2.11
+        commit: 5511380b8980935c25c3ea41df3980445419e59e
       - type: file
         path: edu.berkeley.BOINC.metainfo.xml
       ### Patch to change 2 prefs - workaround the broken simple GUI and exit the boinc client when boincmgr closes
@@ -80,5 +82,4 @@ modules:
       - install -Dm644 edu.berkeley.BOINC.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
       - desktop-file-edit --remove-key=Path ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-    cleanup:
-      - /usr
+
